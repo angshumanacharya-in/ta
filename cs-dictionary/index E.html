@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Dictionary - Concept Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="words/data-num.js"></script>
+    <script src="words/data-A.js"></script>
+    <script src="words/data-B.js"></script>
+    <script src="words/data-C.js"></script>
+    <script src="words/data-D.js"></script>
+    <script src="words/data-E.js"></script>
+    <script src="words/data-F.js"></script>
+    <script src="words/data-G.js"></script>
+    <script src="words/data-H.js"></script>
+    <script src="words/data-I.js"></script>
+    <script src="words/data-J.js"></script>
+    <script src="words/data-K.js"></script>
+    <script src="words/data-L.js"></script>
+    <script src="words/data-M.js"></script>
+    <script src="words/data-N.js"></script>
+    <script src="words/data-O.js"></script>
+    <script src="words/data-P.js"></script>
+    <script src="words/data-Q.js"></script>
+    <script src="words/data-R.js"></script>
+    <script src="words/data-S.js"></script>
+    <script src="words/data-T.js"></script>
+    <script src="words/data-U.js"></script>
+    <script src="words/data-V.js"></script>
+    <script src="words/data-W.js"></script>
+    <script src="words/data-X.js"></script>
+    <script src="words/data-Y.js"></script>
+    <script src="words/data-Z.js"></script>
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- AD ALTERNATIVE 1: Integrated Header Ad -->
+    <header class="global-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo-area">
+            <button class="logo-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar Index Menu">
+                <img src="logo.png" alt="Tabspace Logo" class="logo-img" onerror="this.style.border='1px dashed #333'; this.style.padding='4px';">
+            </button>
+            <span class="logo-separator">/</span>
+            <span class="logo-label">CS Dictionary</span>
+        </div>
+        
+        <!-- Header Inline Ad (e.g., 468x60 Banner) -->
+        <div class="ad-slot header-ad" style="margin-right: 20px;">
+            <div style="background: #f5f5f5; border: 1px dashed #ccc; width: 468px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #666;">
+                Header Sponsor Slot
+            </div>
+        </div>
+    </header>
+
+    <div class="app-workspace">
+        <aside id="sidebarPanel">
+            <div class="sidebar-title">Index Pages</div>
+
+            <!-- MOVED AD SLOT: Now positioned inside the Index section, right above the navigation grid -->
+            <div class="ad-slot sidebar-top-ad" style="margin: 10px; padding: 5px; background: #fafafa; border-radius: 4px;">
+                <div style="background: #ffffff; border: 1px dashed #ddd; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #777; text-align: center;">
+                    Sponsor Link / Info
+                </div>
+            </div>
+
+            <nav class="alpha-grid" id="navigationGrid">
+                <button class="alpha-btn all-btn active" data-page="ALL">All Topics</button>
+                <button class="alpha-btn num-btn" data-page="0-9">0-9</button>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="top-toolbar">
+                <h1 class="page-context-title" id="pageTitle">All Topics <span id="itemCount">(0 terms)</span></h1>
+                
+                <div class="search-wrapper">
+                    <input type="text" id="dashboardSearch" class="search-input" placeholder="Search topics or descriptions...">
+                </div>
+            </div>
+
+            <div class="list-container" id="listContainer">
+                <div class="list-header" id="listHeader">
+                    <div>Topic Name</div>
+                    <div>Definition / Conceptual Breakdown</div>
+                </div>
+                
+                <div id="itemsWrapper" style="display: contents;"></div>
+
+                <div id="tableEmptyState" class="empty-state">
+                    No matching CS topics found inside this dynamic search scope.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AD ALTERNATIVE 3: Floating / Sticky Bottom Anchor Footer -->
+    <div class="ad-slot sticky-footer-ad" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9999; background: rgba(255,255,255,0.95); border-top: 1px solid #ddd; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); padding: 5px 0; text-align: center;">
+        <div style="max-width: 728px; height: 90px; background: #f5f5f5; border: 1px dashed #bbb; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #666; position: relative;">
+            Sticky Anchor Board (728x90)
+            <button onclick="this.parentElement.parentElement.style.display='none';" style="position: absolute; right: -25px; top: 0; background: #333; color: #fff; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 10px; line-height: 20px; padding: 0;">✕</button>
+        </div>
+    </div>
+
+</body>
+</html>
