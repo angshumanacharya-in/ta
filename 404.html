@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - Redirecting...</title>
     <script>
-        // Check if the URL path was trying to access cs-dictionary
+        // Dynamically handles fallback routing within GitHub Pages repo structure (/ta/)
         const path = window.location.pathname;
-        
-        if (path.includes('cs-dictionary')) {
-            // Redirect to the relative cs-dictionary index inside /ta/
-            window.location.replace(window.location.origin + window.location.pathname.split('cs-dictionary')[0] + 'cs-dictionary/');
+        const validFolders = ['cs-dictionary', 'topics', 'cheat-sheet', 'notes', 'playables'];
+        const matchedFolder = validFolders.find(folder => path.includes(folder));
+
+        if (matchedFolder) {
+            // Redirect cleanly back into the matched folder directory
+            const basePath = path.split(matchedFolder)[0];
+            window.location.replace(window.location.origin + basePath + matchedFolder + '/');
         } else {
             // Redirect safely back to the repository root (/ta/)
-            const repoPath = window.location.pathname.startsWith('/ta') ? '/ta/' : './';
+            const repoPath = path.startsWith('/ta') ? '/ta/' : './';
             window.location.replace(repoPath);
         }
     </script>

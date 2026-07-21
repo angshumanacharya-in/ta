@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabspace - Articles Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ff6D00',
+                            green: '#22c55e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-calisto {
+            font-family: 'Calisto MT', 'Bookman Old Style', Georgia, serif;
+        }
+        /* Buttons start white, and turn green with an orange glow/border on hover */
+        .topic-btn-glow:hover {
+            box-shadow: 0 0 16px -2px rgba(255, 109, 0, 0.4);
+            border-color: #ff6D00;
+            color: #22c55e;
+            background-color: #0c0a09;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-calisto antialiased min-h-screen selection:bg-brand-orange selection:text-black">
+
+    <header class="sticky top-0 z-50 bg-black border-b border-zinc-900 px-6 py-4 transition-all">
+        <div class="w-full flex items-center justify-between gap-4">
+            
+            <!-- Logo and Page Breadcrumb -->
+            <div class="flex items-center gap-3 select-none">
+                <a href="index.html" class="flex items-center shrink-0 py-1">
+                    <img src="logo.png" alt="Tabspace Logo" class="h-16 md:h-20 w-auto object-contain block" />
+                </a>
+                <span class="text-zinc-500 text-lg md:text-2xl font-light">/ Articles</span>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-6 py-12 space-y-12">
+
+        <div class="max-w-3xl mx-auto text-center space-y-4 border-b border-zinc-900 pb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                The Technical <span class="text-[#ff6D00]">Library</span>
+            </h1>
+            <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
+                Welcome to the Tabspace Article repository. This space is engineered as a minimal, high-density index for exploring software engineering concepts. Below, you will find architectural deep dives broken into core computing science frameworks and cutting-edge software engineering tool stacks—ordered strictly from numbers to alphabets with dedicated graphical identifiers.
+            </p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center border-b border-zinc-800 max-w-xl mx-auto">
+            <button id="tab-cs" onclick="switchTab('cs')" class="flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-brand-orange text-brand-orange transition-all duration-200 outline-none">
+                CS Fundamentals
+            </button>
+            <button id="tab-tech" onclick="switchTab('tech')" class="flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-transparent text-zinc-500 hover:text-zinc-300 transition-all duration-200 outline-none">
+                Technologies
+            </button>
+        </div>
+
+        <!-- Tab Content Wrapper -->
+        <div class="pt-4">
+            
+            <!-- CS Fundamentals Section -->
+            <section id="content-cs" class="block space-y-12 animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 font-medium max-w-6xl mx-auto">
+                    
+                    <!-- Column 1 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">0-9</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="3d-graphics.png" alt="3D Graphics" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">3D Vector Graphics Acceleration Models</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="alu.png" alt="ALU Subsystem" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">8-Bit ALU Subsystem Hardware Mathematics</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">A</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="algorithms.png" alt="Algorithms" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Algorithms & Complexity Analysis</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="asymptotic.png" alt="Asymptotic Notation" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Asymptotic Notations Fundamentals</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">B</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="boolean.png" alt="Boolean Logic" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Boolean Algebra Logic Gates Topology</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="btree.png" alt="B-Tree" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">B-Tree Optimization Structures</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">C</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="architecture.png" alt="Architecture" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Computer Architecture & Caching Layers</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">P</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="paging.png" alt="Paging" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Paging Algorithms & Page Fault Handling</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="process.png" alt="Process" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Process Scheduling Ring States</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">Q</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="queue.png" alt="Queue" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Queue Thread-Safety Synchronization Models</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">R</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="database.png" alt="Database" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Relational Database Normalization Bounds</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">S</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="semaphore.png" alt="Semaphore" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Semaphore Locks & Mutex Conditionals</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="sockets.png" alt="Sockets" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">System Socket Programming Buffers</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Technologies Section -->
+            <section id="content-tech" class="hidden space-y-12 animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 font-medium max-w-6xl mx-auto">
+                    
+                    <!-- Column 1 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">0-9</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="11factor.png" alt="11-Factor" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">11-Factor Cloud Architecture Blueprint Execution</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">C</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="c.png" alt="C Language" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">C Low Level Manual Memory Allocation</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="cmake.png" alt="CMake" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">CMake Build Pipeline Structuring</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">D</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="docker.png" alt="Docker" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Docker Production Context Containerization Layering</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="django.png" alt="Django" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Django REST Framework Architecture Patterns</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">G</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="git.png" alt="Git" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Git Version Control Operations</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="go.png" alt="Go Language" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Go Channel Runtime Multiplex Routines</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">P</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="python.png" alt="Python" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Python Global Interpreter Lock Execution Mechanics</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="postgresql.png" alt="PostgreSQL" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">PostgreSQL Indexing B-Tree Optimization Systems</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">R</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="react.png" alt="React" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">React Fiber Node Reconciliation Tree Splits</span>
+                                </a>
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="redis.png" alt="Redis" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Redis Memory Storage Eviction Protocols</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">S</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="spring.png" alt="Spring" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">Spring Boot Microservices Security Scopes</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-brand-green text-lg font-bold mb-3">T</div>
+                            <div class="space-y-3 pl-2 border-l border-zinc-900">
+                                <a href="#" class="topic-btn-glow flex items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 p-3 rounded-xl transition-all duration-200 text-zinc-300 w-full text-left">
+                                    <img src="typescript.png" alt="TypeScript" class="w-10 h-10 rounded-lg bg-black border border-zinc-800 object-contain p-1 shrink-0" />
+                                    <span class="text-sm md:text-base font-semibold">TypeScript Strictly Typed Structural Polymorphism</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="pt-8 border-t border-zinc-900 text-center">
+            <p class="text-xs tracking-wider text-zinc-500">
+                Presented by <span class="font-bold text-[#ff6D00]">Tabspace</span> Presentations &copy; 2026. All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Tab Switching Execution Script -->
+    <script>
+        function switchTab(tab) {
+            const btnCs = document.getElementById('tab-cs');
+            const btnTech = document.getElementById('tab-tech');
+            const contentCs = document.getElementById('content-cs');
+            const contentTech = document.getElementById('content-tech');
+
+            if (tab === 'cs') {
+                // Update tabs design
+                btnCs.className = "flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-brand-orange text-brand-orange transition-all duration-200 outline-none";
+                btnTech.className = "flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-transparent text-zinc-500 hover:text-zinc-300 transition-all duration-200 outline-none";
+                
+                // Show/hide section containers
+                contentCs.classList.remove('hidden');
+                contentCs.classList.add('block');
+                contentTech.classList.remove('block');
+                contentTech.classList.add('hidden');
+            } else {
+                // Update tabs design
+                btnTech.className = "flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-brand-orange text-brand-orange transition-all duration-200 outline-none";
+                btnCs.className = "flex-1 py-4 text-center text-xl font-extrabold tracking-wide border-b-2 border-transparent text-zinc-500 hover:text-zinc-300 transition-all duration-200 outline-none";
+                
+                // Show/hide section containers
+                contentTech.classList.remove('hidden');
+                contentTech.classList.add('block');
+                contentCs.classList.remove('block');
+                contentCs.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
