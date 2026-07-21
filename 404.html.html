@@ -9,11 +9,12 @@
         const path = window.location.pathname;
         
         if (path.includes('cs-dictionary')) {
-            // Redirect to the relative cs-dictionary index
+            // Redirect to the relative cs-dictionary index inside /ta/
             window.location.replace(window.location.origin + window.location.pathname.split('cs-dictionary')[0] + 'cs-dictionary/');
         } else {
-            // Redirect back to main home page
-            window.location.replace('/');
+            // Redirect safely back to the repository root (/ta/)
+            const repoPath = window.location.pathname.startsWith('/ta') ? '/ta/' : './';
+            window.location.replace(repoPath);
         }
     </script>
 </head>
